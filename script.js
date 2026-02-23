@@ -21,11 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!ticking) {
             window.requestAnimationFrame(() => {
                 if (window.scrollY > 50) {
-                    navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
-                    navbar.style.padding = '10px 0';
+                    navbar.classList.add('scrolled');
                 } else {
-                    navbar.style.boxShadow = 'none';
-                    navbar.style.padding = '15px 0';
+                    navbar.classList.remove('scrolled');
                 }
                 ticking = false;
             });
@@ -37,8 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof gsap !== 'undefined') {
         gsap.registerPlugin(ScrollTrigger);
 
-        // Use context for better cleanup
-        let ctx = gsap.context(() => {
+         let ctx = gsap.context(() => {
             const isMobile = window.innerWidth <= 768;
             
             // Paint Splatter Animations (Hero & Equipo)
@@ -215,7 +212,14 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const target = document.querySelector(href);
             if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
+                const navHeight = document.querySelector('.navbar').offsetHeight;
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+
                 // Close mobile menu if open
                 if (navLinks.classList.contains('active')) {
                     navLinks.classList.remove('active');
@@ -232,7 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const container = document.querySelector('.video-container');
             const iframe = document.createElement('iframe');
             // Simplificamos la URL y eliminamos origin por si estás probando en local
-            iframe.setAttribute('src', 'https://www.youtube-nocookie.com/embed/-tGbRcYvVCk?autoplay=1&rel=0');
+            iframe.setAttribute('src', 'https://www.youtube.com/embed/ixGd6KK2XGU?si=4qwHl9QZxjG_w3Nr');
             iframe.setAttribute('title', 'YouTube video player');
             iframe.setAttribute('frameborder', '0');
             iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
@@ -270,22 +274,51 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 7. Optimized Form Submission
+    // 7. Optimized Form Submission with Toast Feedback
     const contactForm = document.querySelector('.contact-form');
+    
+    // Create toast container if it doesn't exist
+    let toastContainer = document.querySelector('.toast-container');
+    if (!toastContainer) {
+        toastContainer = document.createElement('div');
+        toastContainer.className = 'toast-container';
+        document.body.appendChild(toastContainer);
+    }
+
+    function showToast(message) {
+        const toast = document.createElement('div');
+        toast.className = 'toast';
+        toast.innerHTML = `
+            <div class="toast-icon">✓</div>
+            <div class="toast-message">${message}</div>
+        `;
+        toastContainer.appendChild(toast);
+        
+        // Trigger animation
+        setTimeout(() => toast.classList.add('show'), 100);
+        
+        // Remove toast
+        setTimeout(() => {
+            toast.classList.remove('show');
+            setTimeout(() => toast.remove(), 500);
+        }, 4000);
+    }
+
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
             submitBtn.disabled = true;
             submitBtn.textContent = 'Enviando...';
 
             // Simulate API call
             setTimeout(() => {
                 const name = document.getElementById('name').value;
-                alert(`¡Gracias ${name}! Tu historia nos inspira. Te responderemos pronto.`);
+                showToast(`¡Gracias ${name}! Tu historia nos inspira.`);
                 contactForm.reset();
                 submitBtn.disabled = false;
-                submitBtn.textContent = 'Enviar mensaje';
+                submitBtn.textContent = originalText;
             }, 1000);
         });
     }
