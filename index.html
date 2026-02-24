@@ -1,415 +1,863 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Catarsis Lab - Tu espacio de transformación emocional</title>
-    <link rel="icon" type="image/png" href="public/favicon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="public/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;700;800&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <header class="navbar">
-        <div class="container nav-content">
-            <div class="logo">
-                <img src="public/Logo3.png" alt="Catarsis Lab Logo">
-            </div>
-            <nav class="nav-links">
-                <a href="#inicio">Inicio</a>
-                <a href="#quienes-somos">Quiénes Somos</a>
-                <a href="#experiencias">Experiencias</a>
-                <a href="#faq">Preguntas frecuentes</a>
-                <a href="https://shop.mycatarsis.com/">Tienda</a>
-            </nav>
-            <div class="nav-actions">
-                <a href="#contacto" class="btn-primary">Empezar ahora</a>
-            </div>
-            <button class="mobile-menu-btn" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+      <div class="container nav-content">
+        <div class="logo">
+          <img src="public/Logo3.png" alt="Catarsis Lab Logo" />
         </div>
+        <nav class="nav-links">
+          <a href="#inicio" data-i18n="nav_home">Inicio</a>
+          <a href="#quienes-somos" data-i18n="nav_about">Quiénes Somos</a>
+          <a href="#experiencias" data-i18n="nav_experiences">Experiencias</a>
+          <a href="#faq" data-i18n="nav_faq">Preguntas frecuentes</a>
+          <a href="https://shop.mycatarsis.com/" data-i18n="nav_shop">Tienda</a>
+        </nav>
+        <div class="nav-actions">
+          <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="es">ES</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+          </div>
+        </div>
+        <button class="mobile-menu-btn" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </header>
 
     <main>
-        <section id="inicio" class="hero">
-            <div class="paint-splatter paint-hero-left"><img src="public/rojo.png" alt=""></div>
-            <div class="paint-splatter paint-hero-right"><img src="public/azul.png" alt=""></div>
-            <div class="paint-splatter paint-hero-yellow"><img src="public/amarillo.png" alt=""></div>
-            <div class="container hero-content">
-                <h1>Tus emociones,<br>finalmente transformadas.</h1>
-                <p class="hero-subtext">
-                    La oportunidad para desentrañar tus emociones y convertirlas en un símbolo poderoso para tu crecimiento. 
-                    Descubre cómo afrontar lo que te duele puede cambiar tu vida en un espacio seguro y creativo.
+      <section id="inicio" class="hero">
+        <div class="paint-splatter paint-hero-left">
+          <img src="public/rojo.png" alt="" />
+        </div>
+        <div class="paint-splatter paint-hero-right">
+          <img src="public/azul.png" alt="" />
+        </div>
+        <div class="paint-splatter paint-hero-yellow">
+          <img src="public/amarillo.png" alt="" />
+        </div>
+        <div class="container hero-content">
+          <h1 data-i18n="hero_h1">
+            Tus emociones,<br />finalmente transformadas.
+          </h1>
+          <p class="hero-subtext" data-i18n="hero_text">
+            La oportunidad para desentrañar tus emociones y convertirlas en un
+            símbolo poderoso para tu crecimiento. Descubre cómo afrontar lo que
+            te duele puede cambiar tu vida en un espacio seguro y creativo.
+          </p>
+          <div class="hero-btns">
+            <a
+              href="#experiencias"
+              class="btn-primary btn-large"
+              data-i18n="hero_btn_exp"
+              >Explorar Experiencias</a
+            >
+            <a
+              href="#quienes-somos"
+              class="btn-secondary btn-large"
+              data-i18n="hero_btn_lab"
+              >Conoce el Lab</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="video-section">
+        <div class="container">
+          <div class="video-container">
+            <div class="video-placeholder">
+              <img
+                src="public/Logo.png"
+                alt="Catarsis Lab Video Thumbnail"
+                class="video-thumb"
+              />
+              <button class="play-btn" aria-label="Reproducir video">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M8 5V19L19 12L8 5Z" fill="currentColor" />
+                </svg>
+                <span data-i18n="video_play"
+                  >Mira cómo funciona Catarsis Lab ~1 min</span
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="como-funciona" class="how-it-works-sticky">
+        <div class="sticky-wrapper">
+          <div class="section-header">
+            <h2 data-i18n="how_it_works_title">¿Cómo funciona Catarsis Lab?</h2>
+          </div>
+          <div class="container sticky-content">
+            <div class="how-visuals">
+              <!-- Visual Step 01 -->
+              <div class="visual-item active" data-step="1">
+                <div class="visual-card bg-soft-orange">
+                  <img src="public/step.png" alt="Sentir y sanar" />
+                </div>
+              </div>
+              <!-- Visual Step 02 -->
+              <div class="visual-item" data-step="2">
+                <div class="visual-card bg-soft-blue">
+                  <img src="public/musica.jpg" alt="Algo se materializa" />
+                </div>
+              </div>
+              <!-- Visual Step 03 -->
+              <div class="visual-item" data-step="3">
+                <div class="visual-card bg-soft-pink">
+                  <img src="public/workshop.jpg" alt="Resignificar" />
+                </div>
+              </div>
+              <!-- Visual Step 04 -->
+              <div class="visual-item" data-step="4">
+                <div class="visual-card bg-soft-blue">
+                  <img src="public/persona.jpg" alt="Integrar" />
+                </div>
+              </div>
+            </div>
+
+            <div class="how-text-scroll">
+              <!-- Step 01 -->
+              <div class="step-trigger" data-step="1">
+                <div class="step-info">
+                  <div class="step-number animate-text">01</div>
+                  <h3 class="animate-text" data-i18n="step_01_title">
+                    Sentir y sanar
+                  </h3>
+                  <p class="animate-text" data-i18n="step_01_text">
+                    Estarás constantemente apoyado, envuelto en una atmósfera de
+                    calidez, cuidado y contención que te permitirá sentir y
+                    sanar.
+                  </p>
+                  <div class="step-btns animate-text">
+                    <a
+                      href="#contacto"
+                      class="btn-primary"
+                      data-i18n="step_01_btn"
+                      >Unirse ahora</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="step-trigger" data-step="2">
+                <div class="step-info">
+                  <div class="step-number animate-text">02</div>
+                  <h3 class="animate-text" data-i18n="step_02_title">
+                    Algo se materializa
+                  </h3>
+                  <p class="animate-text" data-i18n="step_02_text">
+                    Unimos la psicología y el diseño para que seas el narrador
+                    de tu propio cambio, transformando tus interrogantes en
+                    símbolos creativos.
+                  </p>
+                  <div class="step-btns animate-text">
+                    <a
+                      href="https://shop.mycatarsis.com/"
+                      class="btn-primary accent-color"
+                      data-i18n="step_02_btn"
+                      >Ver Tienda</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Step 03 -->
+              <div class="step-trigger" data-step="3">
+                <div class="step-info">
+                  <div class="step-number animate-text">03</div>
+                  <h3 class="animate-text" data-i18n="step_03_title">
+                    Resignificar para avanzar
+                  </h3>
+                  <p class="animate-text" data-i18n="step_03_text">
+                    Vas a tomar un pedacito de tu historia, verlo con claridad y
+                    darle un nuevo significado... para seguir avanzando.
+                  </p>
+                  <div class="step-btns animate-text">
+                    <a
+                      href="https://www.instagram.com/p/DBHiWipxS8I/?img_index=1"
+                      class="btn-secondary"
+                      data-i18n="step_03_btn"
+                      >Leer Historias</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Step 04 -->
+              <div class="step-trigger" data-step="4">
+                <div class="step-info">
+                  <div class="step-number animate-text">04</div>
+                  <h3 class="animate-text" data-i18n="step_04_title">
+                    Integrar el cambio
+                  </h3>
+                  <p class="animate-text" data-i18n="step_04_text">
+                    Sana y gestiona tu historia vital para construir una vida
+                    alineada con tu potencial interior y nuevas herramientas
+                    vitales.
+                  </p>
+                  <div class="step-btns animate-text">
+                    <a
+                      href="#experiencias"
+                      class="btn-primary"
+                      data-i18n="step_04_btn"
+                      >Explorar más</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="quienes-somos" class="features">
+        <div class="container">
+          <div class="section-header">
+            <h2 data-i18n="features_title">
+              Un laboratorio de gestión emocional
+            </h2>
+            <p data-i18n="features_subtitle">
+              Construimos sentido, vitalidad e inspiración a través de la unión
+              de componentes creativos y psicoterapéuticos.
+            </p>
+          </div>
+          <div class="features-grid">
+            <div class="feature-card">
+              <h3 data-i18n="feature_sentir_title">Sentir</h3>
+              <p data-i18n="feature_sentir_text">
+                Permítete transitar tus emociones dentro de un espacio seguro
+                diseñado para la exploración interna.
+              </p>
+            </div>
+            <div class="feature-card">
+              <h3 data-i18n="feature_sublimar_title">Sublimar</h3>
+              <p data-i18n="feature_sublimar_text">
+                Transforma los guiones internos que limitan tu desarrollo
+                individual en experiencias de crecimiento.
+              </p>
+            </div>
+            <div class="feature-card">
+              <h3 data-i18n="feature_resignificar_title">Resignificar</h3>
+              <p data-i18n="feature_resignificar_text">
+                Otorga un nuevo sentido a viejas vivencias, convirtiéndote en el
+                narrador principal de tu vida.
+              </p>
+            </div>
+            <div class="feature-card">
+              <h3 data-i18n="feature_integrar_title">Integrar</h3>
+              <p data-i18n="feature_integrar_text">
+                Sana y gestiona tu historia vital para construir una vida
+                alineada con tu potencial interior.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="equipo" class="team-section">
+        <div class="paint-splatter paint-hero-left">
+          <img src="public/rojo.png" alt="" />
+        </div>
+        <div class="paint-splatter paint-hero-right">
+          <img src="public/azul.png" alt="" />
+        </div>
+        <div class="paint-splatter paint-hero-yellow">
+          <img src="public/amarillo.png" alt="" />
+        </div>
+        <div class="container">
+          <div class="section-header">
+            <h2 data-i18n="team_title">El corazón del Lab</h2>
+            <p data-i18n="team_subtitle">
+              Conoce a las exploradoras de verdades internas detrás de Catarsis
+              Lab.
+            </p>
+          </div>
+          <div class="team-grid">
+            <!-- Joan Amelie -->
+            <article class="team-card">
+              <div class="team-image-wrapper">
+                <img src="public/joan.jpg" alt="Joan Amelie" loading="lazy" />
+              </div>
+              <div class="team-info">
+                <h3>Joan Amelie</h3>
+                <span class="team-role" data-i18n="team_joan_role"
+                  >Psicóloga y Especialista en Creatividad Estratégica</span
+                >
+                <ul class="team-details">
+                  <li data-i18n="team_joan_detail_1">
+                    Exploradora de verdades internas y de experiencias humanas.
+                  </li>
+                  <li data-i18n="team_joan_detail_2">
+                    People Operations Manager.
+                  </li>
+                  <li data-i18n="team_joan_detail_3">Tech enthusiastic.</li>
+                  <li data-i18n="team_joan_detail_4">
+                    Coffee lover & Tennis fan.
+                  </li>
+                  <li data-i18n="team_joan_detail_5">Jesus lover.</li>
+                  <span class="fear"
+                    ><strong data-i18n="team_fear">Miedo a:</strong>
+                    <span data-i18n="team_fear_val"
+                      >parecer ridícula.</span
+                    ></span
+                  >
+                </ul>
+              </div>
+            </article>
+
+            <!-- Alexandra -->
+            <article class="team-card">
+              <div class="team-image-wrapper">
+                <img
+                  src="public/alexandra.jpg"
+                  alt="Alexandra"
+                  loading="lazy"
+                />
+              </div>
+              <div class="team-info">
+                <h3>Alexandra</h3>
+                <span class="team-role" data-i18n="team_alex_role"
+                  >Psicóloga Clínica Transpersonal</span
+                >
+                <ul class="team-details">
+                  <li data-i18n="team_alex_detail_1">
+                    Exploradora de verdades internas y de experiencias humanas.
+                  </li>
+                  <li data-i18n="team_alex_detail_2">
+                    Artista de alma y corazón.
+                  </li>
+                  <li data-i18n="team_alex_detail_3">
+                    Apasionada de las cuestiones de la vida.
+                  </li>
+                  <li data-i18n="team_alex_detail_4">
+                    Preguntona y respondona.
+                  </li>
+                  <span class="fear"
+                    ><strong data-i18n="team_fear">Miedo a:</strong>
+                    <span data-i18n="team_fear_val"
+                      >parecer ridícula.</span
+                    ></span
+                  >
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="experiencias" class="cta-section">
+        <div class="container">
+          <!-- Sección: Talleres que Transforman -->
+          <div class="cta-box">
+            <div class="cta-text">
+              <span
+                class="location-badge"
+                style="
+                  display: inline-block;
+                  background: var(--emphasis-color);
+                  color: white;
+                  padding: 5px 15px;
+                  border-radius: 20px;
+                  font-size: 0.85rem;
+                  font-weight: 700;
+                  margin-bottom: 20px;
+                "
+                data-i18n="exp_talleres_badge"
+                >Experiencias Terapéuticas</span
+              >
+              <h2 data-i18n="exp_talleres_title">Talleres que Transforman</h2>
+              <p data-i18n="exp_talleres_text_1">
+                Nuestros talleres no son solo encuentros, son celebraciones de
+                tu potencial. En Catarsis Lab, creamos experiencias terapéuticas
+                en espacios seguros y acogedores donde puedes explorar tus
+                emociones y convertir tus vivencias en un reflejo de tu
+                crecimiento personal.
+              </p>
+
+              <p data-i18n="exp_talleres_text_2">
+                A través de diferentes dinámicas y temáticas,
+                <strong>Joan y Ale</strong> te guiarán en viajes únicos
+                diseñados para ayudarte a soltar lo que ya no te sirve y dar la
+                bienvenida a lo nuevo—aquello que necesita nacer en ti o tomar
+                forma por primera vez.
+              </p>
+
+              <p
+                style="font-weight: 600; font-style: italic; margin: 25px 0"
+                data-i18n="exp_talleres_italic"
+              >
+                Descubre cómo cada historia que has vivido importa y cada
+                detalle cuenta en este camino hacia el renacer emocional.
+              </p>
+
+              <div
+                class="hero-btns"
+                style="justify-content: flex-start; margin-top: 0"
+              >
+                <a
+                  href="https://shop.mycatarsis.com/search?q=workshop"
+                  class="btn-primary"
+                  data-i18n="exp_talleres_btn_next"
+                  >Ver próximos talleres</a
+                >
+                <a
+                  href="#contacto"
+                  class="btn-secondary"
+                  data-i18n="exp_talleres_btn_suggest"
+                  >Sugerir un tema</a
+                >
+              </div>
+            </div>
+            <div class="cta-image">
+              <img
+                src="public/elementos-02.png"
+                alt="Ilustración de elementos creativos"
+                loading="lazy"
+                width="400"
+                height="300"
+              />
+            </div>
+          </div>
+
+          <!-- Sección: Spots Terapéuticos Individuales -->
+          <div
+            class="cta-box"
+            style="
+              margin-top: 60px;
+              background-color: #fff9f0;
+              border: 1px solid rgba(255, 162, 0, 0.1);
+            "
+          >
+            <div class="cta-image">
+              <img
+                src="public/spots.png"
+                alt="Acompañamiento individual"
+                loading="lazy"
+                width="400"
+                height="450"
+              />
+            </div>
+            <div class="cta-text">
+              <span
+                class="location-badge"
+                style="
+                  display: inline-block;
+                  background: var(--primary-color);
+                  color: white;
+                  padding: 5px 15px;
+                  border-radius: 20px;
+                  font-size: 0.85rem;
+                  font-weight: 700;
+                  margin-bottom: 20px;
+                "
+                data-i18n="exp_spots_badge"
+                >Acompañamiento 1:1</span
+              >
+              <h2 data-i18n="exp_spots_title">
+                Spots Terapéuticos Individuales
+              </h2>
+              <p data-i18n="exp_spots_text">
+                En Catarsis Lab, abrimos nuestros Spots Terapéuticos: espacios
+                exclusivos para quienes buscan acompañamiento psicológico y una
+                intervención precisa, con el mínimo número de encuentros
+                necesarios, pero el máximo impacto posible.
+              </p>
+
+              <div class="how-it-works-list" style="margin: 25px 0">
+                <p
+                  style="
+                    margin-bottom: 15px;
+                    font-weight: 700;
+                    color: var(--text-color);
+                  "
+                  data-i18n="exp_spots_how_works"
+                >
+                  ¿Cómo funciona?
                 </p>
-                <div class="hero-btns">
-                    <a href="#experiencias" class="btn-primary btn-large">Explorar Experiencias</a>
-                    <a href="#quienes-somos" class="btn-secondary btn-large">Conoce el Lab</a>
-                </div>
+                <ul style="list-style: none; padding: 0">
+                  <li style="margin-bottom: 12px; display: flex; gap: 10px">
+                    <span>💛</span>
+                    <span data-i18n="exp_spots_item_1"
+                      >Solo tenemos 5 cupos activos.</span
+                    >
+                  </li>
+                  <li style="margin-bottom: 12px; display: flex; gap: 10px">
+                    <span>💛</span>
+                    <span data-i18n="exp_spots_item_2"
+                      >Cuando alguien finaliza su proceso, abrimos un espacio
+                      para la siguiente persona en lista de espera.</span
+                    >
+                  </li>
+                  <li style="margin-bottom: 12px; display: flex; gap: 10px">
+                    <span>💛</span>
+                    <span data-i18n="exp_spots_item_3"
+                      >Los espacios están disponibles desde hoy. La oportunidad
+                      está abierta: si sientes que es tu momento, reserva tu
+                      spot ahora.</span
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <p
+                style="
+                  font-weight: 700;
+                  color: var(--emphasis-color);
+                  margin-bottom: 20px;
+                "
+                data-i18n="exp_spots_footer"
+              >
+                No hace falta esperar a tocar fondo para pedir ayuda. Si lo
+                necesitas, aquí estamos. 💛
+              </p>
+
+              <div
+                class="hero-btns"
+                style="justify-content: flex-start; margin-top: 0"
+              >
+                <a
+                  href="https://shop.mycatarsis.com/products/spots-terapeuticos?_pos=1&_sid=f9fd9d5cf&_ss=r"
+                  class="btn-primary"
+                  data-i18n="exp_spots_btn_reserve"
+                  >Reserva tu spot ahora</a
+                >
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section class="video-section">
-            <div class="container">
-                <div class="video-container">
-                    <div class="video-placeholder">
-                        <img src="public/Logo.png" alt="Catarsis Lab Video Thumbnail" class="video-thumb">
-                        <button class="play-btn" aria-label="Reproducir video">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M8 5V19L19 12L8 5Z" fill="currentColor"/>
-                            </svg>
-                            <span>Mira cómo funciona Catarsis Lab ~1 min</span>
-                        </button>
-                    </div>
-                </div>
+      <section id="faq" class="faq-section">
+        <!-- Elementos decorativos de fondo -->
+        <div class="faq-bg-elements" aria-hidden="true">
+          <img
+            src="public/corazon.png"
+            alt=""
+            class="faq-shape shape-1"
+            loading="lazy"
+          />
+          <img
+            src="public/sol.png"
+            alt=""
+            class="faq-shape shape-2"
+            loading="lazy"
+          />
+          <img
+            src="public/estrella.png"
+            alt=""
+            class="faq-shape shape-3"
+            loading="lazy"
+          />
+          <img
+            src="public/foco.png"
+            alt=""
+            class="faq-shape shape-4"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="container">
+          <div class="section-header">
+            <h2 data-i18n="faq_title">Preguntas Frecuentes</h2>
+            <p data-i18n="faq_subtitle">
+              Todo lo que necesitas saber sobre nuestro laboratorio de gestión
+              emocional.
+            </p>
+          </div>
+          <div class="faq-container">
+            <div class="faq-item">
+              <button class="faq-question">
+                <span data-i18n="faq_q1"
+                  >¿Qué es exactamente un laboratorio de gestión
+                  emocional?</span
+                >
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p data-i18n="faq_a1">
+                  Es un espacio terapéutico y creativo donde, a través de la
+                  psicología y el co-diseño de experiencias, trabajamos para
+                  transformar emociones y vivencias en símbolos poderosos de
+                  crecimiento personal.
+                </p>
+              </div>
             </div>
-        </section>
-        <section id="como-funciona" class="how-it-works-sticky">
-            <div class="sticky-wrapper">
-                <div class="section-header">
-                    <h2>¿Cómo funciona Catarsis Lab?</h2>
-                </div>
-                <div class="container sticky-content">
-                    <div class="how-visuals">
-                        <!-- Visual Step 01 -->
-                        <div class="visual-item active" data-step="1">
-                            <div class="visual-card bg-soft-orange">
-                                <img src="public/step.png" alt="Sentir y sanar">
-                            </div>
-                        </div>
-                        <!-- Visual Step 02 -->
-                        <div class="visual-item" data-step="2">
-                            <div class="visual-card bg-soft-blue">
-                                <img src="public/musica.jpg" alt="Algo se materializa">
-                            </div>
-                        </div>
-                        <!-- Visual Step 03 -->
-                        <div class="visual-item" data-step="3">
-                            <div class="visual-card bg-soft-pink">
-                                <img src="public/workshop.jpg" alt="Resignificar">
-                            </div>
-                        </div>
-                        <!-- Visual Step 04 -->
-                        <div class="visual-item" data-step="4">
-                            <div class="visual-card bg-soft-blue">
-                                <img src="public/persona.jpg" alt="Integrar">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="how-text-scroll">
-                        <!-- Step 01 -->
-                        <div class="step-trigger" data-step="1">
-                            <div class="step-info">
-                                <div class="step-number animate-text">01</div>
-                                <h3 class="animate-text">Sentir y sanar</h3>
-                                <p class="animate-text">Estarás constantemente apoyado, envuelto en una atmósfera de calidez, cuidado y contención que te permitirá sentir y sanar.</p>
-                                <div class="step-btns animate-text">
-                                    <a href="#contacto" class="btn-primary">Unirse ahora</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="step-trigger" data-step="2">
-                            <div class="step-info">
-                                <div class="step-number animate-text">02</div>
-                                <h3 class="animate-text">Algo se materializa</h3>
-                                <p class="animate-text">Unimos la psicología y el diseño para que seas el narrador de tu propio cambio, transformando tus interrogantes en símbolos creativos.</p>
-                                <div class="step-btns animate-text">
-                                    <a href="https://shop.mycatarsis.com/" class="btn-primary accent-color" >Ver Tienda</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Step 03 -->
-                        <div class="step-trigger" data-step="3">
-                            <div class="step-info">
-                                <div class="step-number animate-text">03</div>
-                                <h3 class="animate-text">Resignificar para avanzar</h3>
-                                <p class="animate-text">Vas a tomar un pedacito de tu historia, verlo con claridad y darle un nuevo significado... para seguir avanzando.</p>
-                                <div class="step-btns animate-text">
-                                    <a href="https://www.instagram.com/p/DBHiWipxS8I/?img_index=1" class="btn-secondary">Leer Historias</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Step 04 -->
-                        <div class="step-trigger" data-step="4">
-                            <div class="step-info">
-                                <div class="step-number animate-text">04</div>
-                                <h3 class="animate-text">Integrar el cambio</h3>
-                                <p class="animate-text">Sana y gestiona tu historia vital para construir una vida alineada con tu potencial interior y nuevas herramientas vitales.</p>
-                                <div class="step-btns animate-text">
-                                    <a href="#experiencias" class="btn-primary">Explorar más</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="faq-item">
+              <button class="faq-question">
+                <span data-i18n="faq_q2"
+                  >¿Necesito experiencia previa en arte o psicología?</span
+                >
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p data-i18n="faq_a2">
+                  No, ninguna. Solo necesitas la disposición para hacerte
+                  preguntas y explorar tus historias de vida. Nosotros te
+                  guiaremos en el proceso de co-creación utilizando herramientas
+                  accesibles para todos.
+                </p>
+              </div>
             </div>
-        </section>
-
-        <section id="quienes-somos" class="features">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Un laboratorio de gestión emocional</h2>
-                    <p>Construimos sentido, vitalidad e inspiración a través de la unión de componentes creativos y psicoterapéuticos.</p>
-                </div>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <h3>Sentir</h3>
-                        <p>Permítete transitar tus emociones dentro de un espacio seguro diseñado para la exploración interna.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>Sublimar</h3>
-                        <p>Transforma los guiones internos que limitan tu desarrollo individual en experiencias de crecimiento.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>Resignificar</h3>
-                        <p>Otorga un nuevo sentido a viejas vivencias, convirtiéndote en el narrador principal de tu vida.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>Integrar</h3>
-                        <p>Sana y gestiona tu historia vital para construir una vida alineada con tu potencial interior.</p>
-                    </div>
-                </div>
+            <div class="faq-item">
+              <button class="faq-question">
+                <span data-i18n="faq_q3"
+                  >¿Cómo funcionan las sesiones de co-diseño?</span
+                >
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p data-i18n="faq_a3">
+                  Son encuentros seguros (individuales o grupales) donde
+                  exploramos un interrogante actual de tu existencia y diseñamos
+                  juntos un escenario o ritual creativo que te permita transitar
+                  y resignificar esa emoción.
+                </p>
+              </div>
             </div>
-        </section>
-        <section id="equipo" class="team-section">
-            <div class="paint-splatter paint-hero-left"><img src="public/rojo.png" alt=""></div>
-            <div class="paint-splatter paint-hero-right"><img src="public/azul.png" alt=""></div>
-            <div class="paint-splatter paint-hero-yellow"><img src="public/amarillo.png" alt=""></div>
-            <div class="container">
-                <div class="section-header">
-                    <h2>El corazón del Lab</h2>
-                    <p>Conoce a las exploradoras de verdades internas detrás de Catarsis Lab.</p>
-                </div>
-                <div class="team-grid">
-                    <!-- Joan Amelie -->
-                    <article class="team-card">
-                        <div class="team-image-wrapper">
-                            <img src="public/joan.jpg" alt="Joan Amelie" loading="lazy">
-                        </div>
-                        <div class="team-info">
-                            <h3>Joan Amelie</h3>
-                            <span class="team-role">Psicóloga y Especialista en Creatividad Estratégica</span>
-                            <ul class="team-details">
-                                <li>Exploradora de verdades internas y de experiencias humanas.</li>
-                                <li>People Operations Manager.</li>
-                                <li>Tech enthusiastic.</li>
-                                <li>Coffee lover & Tennis fan.</li>
-                                <li>Jesus lover.</li>
-                                <span class="fear"><strong>Miedo a:</strong> parecer ridícula.</span>
-                            </ul>
-                        </div>
-                    </article>
-
-                    <!-- Alexandra -->
-                    <article class="team-card">
-                        <div class="team-image-wrapper">
-                            <img src="public/alexandra.jpg" alt="Alexandra" loading="lazy">
-                        </div>
-                        <div class="team-info">
-                            <h3>Alexandra</h3>
-                            <span class="team-role">Psicóloga Clínica Transpersonal</span>
-                            <ul class="team-details">
-                                <li>Exploradora de verdades internas y de experiencias humanas.</li>
-                                <li>Artista de alma y corazón.</li>
-                                <li>Apasionada de las cuestiones de la vida.</li>
-                                <li>Preguntona y respondona.</li>
-                                <span class="fear"><strong>Miedo a:</strong> parecer ridícula.</span>
-                            </ul>
-                        </div>
-                    </article>
-                </div>
+            <div class="faq-item">
+              <button class="faq-question">
+                <span data-i18n="faq_q4"
+                  >¿Qué significa "resignificar mi historia"?</span
+                >
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p data-i18n="faq_a4">
+                  Significa darle un nuevo sentido a viejas vivencias o guiones
+                  internos que te limitan. Dejas de ser la víctima de tu pasado
+                  para convertirte en el narrador principal de tu vida presente
+                  y futura.
+                </p>
+              </div>
             </div>
-        </section>
-
-        <section id="experiencias" class="cta-section">
-            <div class="container">
-                <!-- Sección: Talleres que Transforman -->
-                <div class="cta-box">
-                    <div class="cta-text">
-                        <span class="location-badge" style="display: inline-block; background: var(--emphasis-color); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; margin-bottom: 20px;">Experiencias Terapéuticas</span>
-                        <h2>Talleres que Transforman</h2>
-                        <p>Nuestros talleres no son solo encuentros, son celebraciones de tu potencial. En Catarsis Lab, creamos experiencias terapéuticas en espacios seguros y acogedores donde puedes explorar tus emociones y convertir tus vivencias en un reflejo de tu crecimiento personal.</p>
-                        
-                        <p>A través de diferentes dinámicas y temáticas, <strong>Joan y Ale</strong> te guiarán en viajes únicos diseñados para ayudarte a soltar lo que ya no te sirve y dar la bienvenida a lo nuevo—aquello que necesita nacer en ti o tomar forma por primera vez.</p>
-
-                        <p style="font-weight: 600; font-style: italic; margin: 25px 0;">Descubre cómo cada historia que has vivido importa y cada detalle cuenta en este camino hacia el renacer emocional.</p>
-                        
-                        <div class="hero-btns" style="justify-content: flex-start; margin-top: 0;">
-                            <a href="https://shop.mycatarsis.com/search?q=workshop" class="btn-primary">Ver próximos talleres</a>
-                            <a href="#contacto" class="btn-secondary">Sugerir un tema</a>
-                        </div>
-                    </div>
-                    <div class="cta-image">
-                        <img src="public/elementos-02.png" alt="Ilustración de elementos creativos" loading="lazy" width="400" height="300">
-                    </div>
-                </div>
-
-                <!-- Sección: Spots Terapéuticos Individuales -->
-                <div class="cta-box" style="margin-top: 60px; background-color: #fff9f0; border: 1px solid rgba(255, 162, 0, 0.1);">
-                    <div class="cta-image">
-                        <img src="public/spots.png" alt="Acompañamiento individual" loading="lazy" width="400" height="450" >
-                    </div>
-                    <div class="cta-text">
-                        <span class="location-badge" style="display: inline-block; background: var(--primary-color); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; margin-bottom: 20px;">Acompañamiento 1:1</span>
-                        <h2>Spots Terapéuticos Individuales</h2>
-                        <p>En Catarsis Lab, abrimos nuestros Spots Terapéuticos: espacios exclusivos para quienes buscan acompañamiento psicológico y una intervención precisa, con el mínimo número de encuentros necesarios, pero el máximo impacto posible.</p>
-                        
-                        <div class="how-it-works-list" style="margin: 25px 0;">
-                            <p style="margin-bottom: 15px; font-weight: 700; color: var(--text-color);">¿Cómo funciona?</p>
-                            <ul style="list-style: none; padding: 0;">
-                                <li style="margin-bottom: 12px; display: flex; gap: 10px;"><span>💛</span> Solo tenemos 5 cupos activos.</li>
-                                <li style="margin-bottom: 12px; display: flex; gap: 10px;"><span>💛</span> Cuando alguien finaliza su proceso, abrimos un espacio para la siguiente persona en lista de espera.</li>
-                                <li style="margin-bottom: 12px; display: flex; gap: 10px;"><span>💛</span> Los espacios están disponibles desde hoy. La oportunidad está abierta: si sientes que es tu momento, reserva tu spot ahora.</li>
-                            </ul>
-                        </div>
-
-                        <p style="font-weight: 700; color: var(--emphasis-color); margin-bottom: 20px;">No hace falta esperar a tocar fondo para pedir ayuda. Si lo necesitas, aquí estamos. 💛</p>
-                        
-                        <div class="hero-btns" style="justify-content: flex-start; margin-top: 0;">
-                            <a href="https://shop.mycatarsis.com/products/spots-terapeuticos?_pos=1&_sid=f9fd9d5cf&_ss=r" class="btn-primary ">Reserva tu spot ahora</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="faq-item">
+              <button class="faq-question">
+                <span data-i18n="faq_q5"
+                  >¿Tienen atención presencial o virtual?</span
+                >
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p data-i18n="faq_a5">
+                  Ofrecemos ambas modalidades. Nuestro laboratorio virtual
+                  permite que personas de cualquier lugar del mundo se unan a
+                  nuestras experiencias y grupos de apoyo.
+                </p>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section id="faq" class="faq-section">
-            <!-- Elementos decorativos de fondo -->
-            <div class="faq-bg-elements" aria-hidden="true">
-                <img src="public/corazon.png" alt="" class="faq-shape shape-1" loading="lazy">
-                <img src="public/sol.png" alt="" class="faq-shape shape-2" loading="lazy">
-                <img src="public/estrella.png" alt="" class="faq-shape shape-3" loading="lazy">
-                <img src="public/foco.png" alt="" class="faq-shape shape-4" loading="lazy">
-            </div>
-            
-            <div class="container">
-                <div class="section-header">
-                    <h2>Preguntas Frecuentes</h2>
-                    <p>Todo lo que necesitas saber sobre nuestro laboratorio de gestión emocional.</p>
-                </div>
-                <div class="faq-container">
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span>¿Qué es exactamente un laboratorio de gestión emocional?</span>
-                            <span class="faq-icon">+</span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Es un espacio terapéutico y creativo donde, a través de la psicología y el co-diseño de experiencias, trabajamos para transformar emociones y vivencias en símbolos poderosos de crecimiento personal.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span>¿Necesito experiencia previa en arte o psicología?</span>
-                            <span class="faq-icon">+</span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>No, ninguna. Solo necesitas la disposición para hacerte preguntas y explorar tus historias de vida. Nosotros te guiaremos en el proceso de co-creación utilizando herramientas accesibles para todos.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span>¿Cómo funcionan las sesiones de co-diseño?</span>
-                            <span class="faq-icon">+</span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Son encuentros seguros (individuales o grupales) donde exploramos un interrogante actual de tu existencia y diseñamos juntos un escenario o ritual creativo que te permita transitar y resignificar esa emoción.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span>¿Qué significa "resignificar mi historia"?</span>
-                            <span class="faq-icon">+</span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Significa darle un nuevo sentido a viejas vivencias o guiones internos que te limitan. Dejas de ser la víctima de tu pasado para convertirte en el narrador principal de tu vida presente y futura.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span>¿Tienen atención presencial o virtual?</span>
-                            <span class="faq-icon">+</span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Ofrecemos ambas modalidades. Nuestro laboratorio virtual permite que personas de cualquier lugar del mundo se unan a nuestras experiencias y grupos de apoyo.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <section id="contacto" class="contact-section">
+        <div class="container">
+          <div class="contact-content">
+            <h2 data-i18n="contact_title">¿Tienes una pregunta?</h2>
+            <p data-i18n="contact_subtitle">
+              Déjanos un mensaje y te responderemos lo antes posible.
+            </p>
+            <form
+              action="https://api.web3forms.com/submit"
+              method="POST"
+              class="contact-form"
+            >
+              <input
+                type="hidden"
+                name="access_key"
+                value="7811aa41-a433-4690-a53c-b6b71ef8870e"
+              />
 
-        <section id="contacto" class="contact-section">
-            <div class="container">
-                <div class="contact-content">
-                    <h2>¿Tienes una pregunta?</h2>
-                    <p>Déjanos un mensaje y te responderemos lo antes posible.</p>
-                    
-                    <form class="contact-form">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name">Nombre</label>
-                                <input type="text" id="name" name="name" placeholder="Tu nombre" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="lastname">Apellido</label>
-                                <input type="text" id="lastname" name="lastname" placeholder="Tu apellido" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Correo electrónico</label>
-                            <input type="email" id="email" name="email" placeholder="tu@email.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Mensaje</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Tu historia nos inspira. Si tienes comentarios o alguna duda, no dudes en escribirnos. Estamos aquí para escucharte." required></textarea>
-                        </div>
-                        <button type="submit" class="btn-primary">Enviar mensaje</button>
-                    </form>
+              <input
+                type="checkbox"
+                name="botcheck"
+                class="hidden"
+                style="display: none"
+              />
+
+              <input type="hidden" name="from_name" value="Catarsis Lab Web" />
+              <input
+                type="hidden"
+                name="subject"
+                value="Nuevo contacto desde la Web"
+              />
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name" data-i18n="contact_label_name"
+                    >Nombre</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Tu nombre"
+                    data-i18n-placeholder="contact_placeholder_name"
+                    required
+                  />
                 </div>
-            </div>
-        </section>
+                <div class="form-group">
+                  <label for="lastname" data-i18n="contact_label_lastname"
+                    >Apellido</label
+                  >
+                  <input
+                    type="text"
+                    id="lastname"
+                    name="lastname"
+                    placeholder="Tu apellido"
+                    data-i18n-placeholder="contact_placeholder_lastname"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email" data-i18n="contact_label_email"
+                  >Correo electrónico</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="tu@email.com"
+                  data-i18n-placeholder="contact_placeholder_email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="message" data-i18n="contact_label_message"
+                  >Mensaje</label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  placeholder="Tu historia nos inspira..."
+                  data-i18n-placeholder="contact_placeholder_message"
+                  required
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="btn-primary"
+                data-i18n="contact_btn_send"
+              >
+                Enviar mensaje
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <img src="public/Logo3.png" alt="Catarsis Lab Logo" class="footer-logo">
-                <p class="footer-tagline">Exploradores de verdades internas.</p>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/catarsislab/" target="_blank" rel="noopener" aria-label="Instagram">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-icon">
-                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-
-            <div class="footer-newsletter-integrated">
-                <h4>Suscríbete a nuestro blog</h4>
-                <p>Recibe cada domingo una nueva historia resignificada.</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Tu correo electrónico" required>
-                    <button type="submit" class="btn-primary">Suscribirme</button>
-                </form>
-            </div>
-
-            <div class="footer-contact">
-                <h4>Contacto</h4>
-                <p><a href="mailto:catarsislabadm@gmail.com" class="contact-email">catarsislabadm@gmail.com</a></p>
-            </div>
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <img
+            src="public/Logo3.png"
+            alt="Catarsis Lab Logo"
+            class="footer-logo"
+          />
+          <p class="footer-tagline" data-i18n="footer_tagline">
+            Exploradores de verdades internas.
+          </p>
+          <div class="social-links">
+            <a
+              href="https://www.instagram.com/catarsislab/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Instagram"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="social-icon"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path
+                  d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                ></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+          </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Catarsis Lab. Todos los derechos reservados.</p>
+
+        <div class="footer-newsletter-integrated">
+          <h4 data-i18n="footer_newsletter_title">Suscríbete a nuestro blog</h4>
+          <p data-i18n="footer_newsletter_text">
+            Recibe cada domingo una nueva historia resignificada.
+          </p>
+          <form
+            action="https://api.web3forms.com/submit"
+            method="POST"
+            class="newsletter-form"
+          >
+            <input
+              type="hidden"
+              name="access_key"
+              value="7811aa41-a433-4690-a53c-b6b71ef8870e"
+            />
+
+            <input
+              type="hidden"
+              name="subject"
+              value="NUEVO SUSCRIPTOR - Blog Catarsis Lab"
+            />
+
+            <input
+              type="checkbox"
+              name="botcheck"
+              class="hidden"
+              style="display: none"
+            />
+
+            <input
+              type="email"
+              name="email"
+              placeholder="Tu correo electrónico"
+              data-i18n-placeholder="footer_newsletter_placeholder"
+              required
+            />
+
+            <button
+              type="submit"
+              class="btn-primary"
+              data-i18n="footer_newsletter_btn"
+            >
+              Suscribirme
+            </button>
+          </form>
         </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="footer_copyright">
+          &copy; 2026 Catarsis Lab. Todos los derechos reservados.
+        </p>
+      </div>
     </footer>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
