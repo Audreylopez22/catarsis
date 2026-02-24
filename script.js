@@ -417,6 +417,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const submitBtn = contactForm.querySelector('button[type="submit"]');
       const originalText = submitBtn.textContent;
       const formData = new FormData(contactForm);
+      formData.append("access_key", CONFIG.WEB3FORMS_KEY);
 
       submitBtn.disabled = true;
       submitBtn.textContent =
@@ -464,6 +465,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const submitBtn = newsletterForm.querySelector('button[type="submit"]');
       const originalText = submitBtn.textContent;
       const formData = new FormData(newsletterForm);
+      formData.append("access_key", CONFIG.WEB3FORMS_KEY);
 
       submitBtn.disabled = true;
       submitBtn.textContent =

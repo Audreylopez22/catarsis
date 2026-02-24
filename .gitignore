@@ -1,0 +1,6 @@
+# Archivos de configuración privada
+config.js
+
+# Carpetas de dependencias
+node_modules/
+.DS_Store
