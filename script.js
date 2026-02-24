@@ -465,7 +465,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const submitBtn = newsletterForm.querySelector('button[type="submit"]');
       const originalText = submitBtn.textContent;
       const formData = new FormData(newsletterForm);
-      formData.append("access_key", "7811aa41-a433-4690-a53c-b6b71ef8870e");
+      formData.append("access_key", "d15f7ade-b980-42cb-9776-d96e1eb115ac");
 
       submitBtn.disabled = true;
       submitBtn.textContent =
