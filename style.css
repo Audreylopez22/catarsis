@@ -14,7 +14,6 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
-  overflow-x: hidden;
 }
 
 * {
@@ -846,16 +845,34 @@ body {
   }
 
   .sticky-content {
-    flex-direction: column-reverse;
-    gap: 40px;
+    flex-direction: column;
+    gap: 20px;
   }
 
   .how-visuals {
-    position: relative;
-    top: 0;
-    height: 400px;
+    position: sticky;
+    top: 70px;
+    height: 420px;
     width: 100%;
     order: 1;
+    z-index: 10;
+    background-color: var(--white);
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .visual-item {
+    padding: 20px;
+  }
+
+  .visual-card {
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   }
 
   .how-text-scroll {
@@ -864,7 +881,7 @@ body {
   }
 
   .step-trigger {
-    min-height: 50vh;
+    min-height: 70vh;
   }
 
   .footer-grid {
@@ -908,6 +925,7 @@ body {
   background-image: radial-gradient(#e1e1e1 0.5px, transparent 0.5px);
   background-size: 30px 30px; /* Sutil patrón de puntos para look creativo */
   position: relative;
+  overflow: hidden;
 }
 
 .team-grid {

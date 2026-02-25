@@ -196,6 +196,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const steps = document.querySelectorAll(".step-trigger");
       const visuals = document.querySelectorAll(".visual-item");
 
+      // Initialize first visual
+      if (visuals.length > 0) {
+        updateVisual(0);
+      }
+
       steps.forEach((step, i) => {
         ScrollTrigger.create({
           trigger: step,
