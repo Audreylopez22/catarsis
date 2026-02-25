@@ -417,19 +417,20 @@ document.addEventListener("DOMContentLoaded", () => {
       const submitBtn = contactForm.querySelector('button[type="submit"]');
       const originalText = submitBtn.textContent;
       const formData = new FormData(contactForm);
-      formData.append("access_key", CONFIG.WEB3FORMS_KEY);
 
       submitBtn.disabled = true;
       submitBtn.textContent =
         document.documentElement.lang === "en" ? "Sending..." : "Enviando...";
 
-      fetch("https://api.web3forms.com/submit", {
+      fetch(contactForm.action, {
         method: "POST",
         body: formData,
+        headers: {
+          Accept: "application/json",
+        },
       })
         .then(async (response) => {
-          const json = await response.json();
-          if (response.status === 200) {
+          if (response.ok) {
             const name = document.getElementById("name").value;
             const successMsg =
               document.documentElement.lang === "en"
@@ -438,8 +439,8 @@ document.addEventListener("DOMContentLoaded", () => {
             showToast(successMsg);
             contactForm.reset();
           } else {
-            console.log(response);
-            showToast(json.message);
+            const json = await response.json();
+            showToast(json.error || json.message || "Error");
           }
         })
         .catch((error) => {
@@ -465,7 +466,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const submitBtn = newsletterForm.querySelector('button[type="submit"]');
       const originalText = submitBtn.textContent;
       const formData = new FormData(newsletterForm);
-      formData.append("access_key", "d15f7ade-b980-42cb-9776-d96e1eb115ac");
 
       submitBtn.disabled = true;
       submitBtn.textContent =
@@ -473,13 +473,15 @@ document.addEventListener("DOMContentLoaded", () => {
           ? "Subscribing..."
           : "Suscribiendo...";
 
-      fetch("https://api.web3forms.com/submit", {
+      fetch(newsletterForm.action, {
         method: "POST",
         body: formData,
+        headers: {
+          Accept: "application/json",
+        },
       })
         .then(async (response) => {
-          const json = await response.json();
-          if (response.status === 200) {
+          if (response.ok) {
             const successMsg =
               document.documentElement.lang === "en"
                 ? `Thank you for subscribing to our blog!`
@@ -487,7 +489,8 @@ document.addEventListener("DOMContentLoaded", () => {
             showToast(successMsg);
             newsletterForm.reset();
           } else {
-            showToast(json.message);
+            const json = await response.json();
+            showToast(json.error || json.message || "Error");
           }
         })
         .catch((error) => {

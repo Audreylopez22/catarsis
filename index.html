@@ -675,16 +675,11 @@
               Déjanos un mensaje y te responderemos lo antes posible.
             </p>
             <form
-              action="https://api.web3forms.com/submit"
+              action="https://formspree.io/f/mnqyleqj"
               method="POST"
               class="contact-form"
             >
-              <input
-                type="checkbox"
-                name="botcheck"
-                class="hidden"
-                style="display: none"
-              />
+              <input type="text" name="_gotcha" style="display:none" />
 
               <input type="hidden" name="from_name" value="Catarsis Lab Web" />
               <input
@@ -804,22 +799,17 @@
             Recibe cada domingo una nueva historia resignificada.
           </p>
           <form
-            action="https://api.web3forms.com/submit"
+            action="https://formspree.io/f/mrgnavla"
             method="POST"
             class="newsletter-form"
           >
+            <input type="text" name="_gotcha" style="display:none" />
             <input
               type="hidden"
               name="subject"
-              value="NUEVO SUSCRIPTOR - Blog Catarsis Lab"
+              value="NUEVO SUSCRIPTOR - NewsLetter Catarsis Lab"
             />
-
-            <input
-              type="checkbox"
-              name="botcheck"
-              class="hidden"
-              style="display: none"
-            />
+            <input type="hidden" name="from_name" value="Catarsis Lab Blog" />
 
             <input
               type="email"
@@ -846,7 +836,6 @@
       </div>
     </footer>
 
-    <script src="config.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
