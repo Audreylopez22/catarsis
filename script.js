@@ -61,6 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const isExpanded = mobileMenuBtn.getAttribute("aria-expanded") === "true";
       mobileMenuBtn.setAttribute("aria-expanded", !isExpanded);
       navLinks.classList.toggle("active");
+      mobileMenuBtn.classList.toggle("active");
     });
   }
 
