@@ -302,6 +302,22 @@ document.addEventListener("DOMContentLoaded", () => {
           });
         });
       });
+
+      // CTA Images Reveal Animation
+      gsap.utils.toArray(".cta-image img, .cta-image-primary img").forEach((img) => {
+        gsap.from(img, {
+          scrollTrigger: {
+            trigger: img,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+          scale: 0.9,
+          opacity: 0,
+          y: 40,
+          duration: 1.2,
+          ease: "power3.out",
+        });
+      });
     });
   }
 

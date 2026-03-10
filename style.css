@@ -221,6 +221,12 @@ body {
   display: flex;
   justify-content: center;
   gap: 15px;
+  flex-wrap: wrap; /* Added flex-wrap */
+}
+
+.cta-box .hero-btns a {
+  flex: 1; /* Make buttons grow evenly in the cta-box */
+  text-align: center;
 }
 
 .btn-large {
@@ -483,6 +489,25 @@ body {
   color: var(--text-light);
 }
 
+.cta-btns {
+  display: flex;
+  flex-wrap: wrap; /* Permite que bajen en móvil */
+  gap: 12px;
+  width: 100%;
+  justify-content: flex-start; /* Alineados a la izquierda como tu texto */
+  margin-top: 20px;
+}
+
+.cta-btns a {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
 .cta-image {
   flex: 1;
   display: flex;
@@ -498,6 +523,17 @@ body {
 .faq-section {
   position: relative;
   overflow: hidden; /* Evita que las formas se salgan de la sección */
+}
+.cta-image-primary img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cta-image-primary:hover img {
+  transform: scale(1.03) translateY(-10px);
 }
 
 .faq-container {
